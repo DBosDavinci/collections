@@ -1,5 +1,4 @@
 from random import randrange
-from typing import List
 
 kleuren = ["oranje","blauw","groen","bruin"]
 zakList = []
@@ -9,14 +8,12 @@ hoeveel = int(input("Hoeveel kleuren moeten er aan de zak m&m's toegevoegd worde
 def mnmFunctieList(hoeveel:int):
     for x in range(1,(hoeveel+1)):
         zakList.append(kleuren[randrange(0,4)])
-        x+=1
     print(zakList)
 
 def mnmFunctieDict(hoeveel:int):
     for x in range(1,(hoeveel+1)):
         kleur = kleuren[randrange(0,4)]
         zakDictionary[kleur] = zakDictionary[kleur] + 1
-        x+=1
     print(zakDictionary)
 
 def mnmFunctieSorteer(SorteerList:list,SorteerDict:dict):
@@ -26,7 +23,7 @@ def mnmFunctieSorteer(SorteerList:list,SorteerDict:dict):
     g = SorteerDict.get("groen")
     br = SorteerDict.get("bruin")
     x = 1
-    while x < hoeveel:
+    for x in range(0,hoeveel):
         if SorteerList[x] == "oranje":
             o = o + 1
         elif SorteerList[x] == "blauw":
@@ -35,7 +32,6 @@ def mnmFunctieSorteer(SorteerList:list,SorteerDict:dict):
             g = g + 1
         elif SorteerList[x] == "bruin":
             br = br + 1
-        x = x + 1
     print("Er zijn {} oranje, {} blauwe, {} groene en {} bruine m&m's".format(o,bl,g,br))
 
 mnmFunctieList(hoeveel)
