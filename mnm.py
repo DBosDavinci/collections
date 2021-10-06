@@ -22,7 +22,6 @@ def mnmFunctieSorteer(SorteerList:list,SorteerDict:dict):
     bl = SorteerDict.get("blauw")
     g = SorteerDict.get("groen")
     br = SorteerDict.get("bruin")
-    x = 1
     for x in range(0,hoeveel):
         if SorteerList[x] == "oranje":
             o = o + 1
